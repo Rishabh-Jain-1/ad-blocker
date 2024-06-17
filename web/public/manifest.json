@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "React Ad Blocker",
+  "version": "1.0",
+  "description": "A simple ad blocker built with React",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": ["webRequest", "webRequestBlocking", "declarativeNetRequest"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
+}
