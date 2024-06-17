@@ -6,8 +6,6 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "512": "icons/icon512.png"
-      // "192": "icons/icon192.png"
     }
   },
   "permissions": ["webRequest", "webRequestBlocking", "declarativeNetRequest"],
