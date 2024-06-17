@@ -9,20 +9,20 @@ function App() {
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
-    chrome.storage.local.get(['adBlockerActive'], (result) => {
+    chrome?.storage?.local?.get(['adBlockerActive'], (result) => {
       if (result.adBlockerActive !== undefined) {
         setIsActive(result.adBlockerActive);
       } else {
-        chrome.storage.local.set({ adBlockerActive: true });
+        chrome?.storage.local.set({ adBlockerActive: true });
       }
     });
-  }, []);
+  }, [chrome]);
 
   const toggleAdBlocker = () => {
     const newState = !isActive;
     setIsActive(newState);
-    chrome.storage.local.set({ adBlockerActive: newState }, () => {
-      chrome.runtime.sendMessage({ type: 'TOGGLE_ADBLOCKER', isActive: newState });
+    chrome?.storage?.local?.set({ adBlockerActive: newState }, () => {
+      chrome?.runtime?.sendMessage({ type: 'TOGGLE_ADBLOCKER', isActive: newState });
     });
   };
   
